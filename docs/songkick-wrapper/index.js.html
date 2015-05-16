@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: index.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: index.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * SongKick module
+ * @module songkick-wrapper
+ * @author Suhail Abood
+ */
+var request = require('request');
+var urls = require('./songkick/urls');
+var q = require('q');
+/**
+ * Creates a new SongKick instance
+ * @constructor
+ * @name SongKick
+ * @param {string} KEY the SongKick API key 
+ */
+var SongKick = function(KEY){
+	this.key = KEY;
+};
+
+function proxy(fn,ctx){
+	var c = ctx || this;
+	return function(){
+		fn.apply(c,arguments);
+	};
+}
+
+var sendRequest = function(url){
+	var def = q.defer();
+	request({url:url,json:true},function(err,response,body){
+	
+		if (!err &amp;&amp; response.statusCode == 200){
+			def.resolve(body);
+			return;
+		}
+		def.reject('Network error has occured');
+	});
+	return def.promise;
+}
+
+function scs(e){
+	if (e &amp;&amp; e.resultsPage &amp;&amp; e.resultsPage.results){
+		return e.resultsPage;
+	}
+	return {};
+}
+
+function err(e){
+	return e;
+}
+
+function functor(fn){
+	var def = q.defer();
+	if (fn){
+		fn(def);
+	}
+	return def.promise;
+}
+
+SongKick.prototype = {
+	/**
+	 * Retrieves the detials of an event given its SongKick id. 
+	 * @param {Number} id SongKick id of the event
+	 * @param {String} [dataType] this can be either "json" or "xml" defaults to "json"
+	 * @return {Promise} a promise which will be resolved or rejected depending on the result of the request. 
+	 */
+	getEventDetails:function(id,dataType){
+		return sendRequest(urls.eventDetails(this.key,id,dataType))
+			.then(scs,err);
+	},
+	/**
+	 * Retrieves the upcoming events of an artist given his/her SongKick id. 
+	 * @param {Number} id SongKick id of the artist
+	 * @param {String} [dataType] can be either "json" or "xml" defaults to "json"
+	 * @param {String} [createdAfter] a date to filter the results, this must be in this format "YYYY-MM-DDTHH:mm:iiZ" defaults to undefined
+	 * @param {Number} [page] which page of the results to fetch, defaults to 0. 
+	 * @param {String} [order] the order in which the results should be sorted this can be either "asc" or "desc". 
+	 * @return {Promise} a promise which will be resolved or rejected depending on the result of the request. 
+	 */
+	getArtistUpcomingEvents:function(id,dataType,createdAfter,page,order){
+		return sendRequest(urls.artistUpcoming(this.key,id,dataType,createdAfter,page,order))
+			.then(scs,err);
+	},
+	/**
+	 * Retrieves the upcoming events of an artist given his/her MusicBrainz id. 
+	 * @param {Number} id MusicBrainz id of the artist
+	 * @param {String} [dataType] can be either "json" or "xml" defaults to "json"
+	 * @param {String} [createdAfter] a date to filter the results, this must be in this format "YYYY-MM-DDTHH:mm:iiZ" defaults to undefined
+	 * @param {Number} [page] which page of the results to fetch, defaults to 0. 
+	 * @param {String} [order] the order in which the results should be sorted this can be either "asc" or "desc". 
+	 * @return {Promise} a promise which will be resolved or rejected depending on the result of the request. 
+	 */
+	getArtistUpcomingEventsUsingMusicBrainz:function(id,dataType,createdAfter,page,order){
+		return sendRequest(urls.artistUpcomingMusicBrainz(this.key,id,dataType,createdAfter,page,order))
+			.then(scs,err);
+	},
+	/**
+	 * Retrieves a venue's upcoming events of given the venue's id. 
+	 * @param {Number} id SongKick id of the venue
+	 * @param {String} [dataType] can be either "json" or "xml" defaults to "json"
+	 * @param {String} [createdAfter] a date to filter the results, this must be in this format "YYYY-MM-DDTHH:mm:iiZ" defaults to undefined
+	 * @param {Number} [page] which page of the results to fetch, defaults to 0. 
+	 * @param {String} [order] the order in which the results should be sorted this can be either "asc" or "desc". 
+	 * @return {Promise} a promise which will be resolved or rejected depending on the result of the request. 
+	 */
+	getVenueUpcomingEvents:function(id,dataType,createdAfter,page,order){
+		return sendRequest(urls.venueUpcoming(this.key,id,dataType,createdAfter,page,order))
+			.then(scs,err);
+	},
+	/**
+	 * Retrieves a metro area's upcoming events of given the merto area's id. 
+	 * @param {Number} id SongKick id of the metro area
+	 * @param {String} [dataType] can be either "json" or "xml" defaults to "json"
+	 * @param {String} [createdAfter] a date to filter the results, this must be in this format "YYYY-MM-DDTHH:mm:iiZ" defaults to undefined
+	 * @param {Number} [page] which page of the results to fetch, defaults to 0. 
+	 * @param {String} [order] the order in which the results should be sorted this can be either "asc" or "desc". 
+	 * @return {Promise} a promise which will be resolved or rejected depending on the result of the request. 
+	 */
+	getMetroAreaUpcomingEvents:function(id,dataType,createdAfter,page,order){
+		return sendRequest(urls.metroAreaUpcoming(this.key,id,dataType,createdAfter,page,order))
+			.then(scs,err);
+	},
+	/**
+	 * Retrieves a user's upcoming events of given the user's id. 
+	 * @param {Number} username SongKick username of the user
+	 * @param {String} filter the data filter to use this can be either "attendance" or "tracked_artist"
+	 * @param {String} [dataType] can be either "json" or "xml" defaults to "json"
+	 * @param {String} [createdAfter] a date to filter the results, this must be in this format "YYYY-MM-DDTHH:mm:iiZ" defaults to undefined
+	 * @param {Number} [page] which page of the results to fetch, defaults to 0. 
+	 * @param {String} [order] the order in which the results should be sorted this can be either "asc" or "desc". 
+	 * @return {Promise} a promise which will be resolved or rejected depending on the result of the request. 
+	 */
+	getUserUpcomingEvents:function(username,filter,dataType,createdAfter,page,order){
+		return sendRequest(urls.userUpcoming(this.key,username,filter,dataType,createdAfter,page,order))
+			.then(scs,err);
+	},
+	/**
+	 * Retrieves a user's upcoming events attendance of a user. 
+	 * @param {Number} username SongKick username of the user
+	 * @param {String} [dataType] can be either "json" or "xml" defaults to "json"
+	 * @param {String} [createdAfter] a date to filter the results, this must be in this format "YYYY-MM-DDTHH:mm:iiZ" defaults to undefined
+	 * @param {Number} [page] which page of the results to fetch, defaults to 0. 
+	 * @param {String} [order] the order in which the results should be sorted this can be either "asc" or "desc". 
+	 * @return {Promise} a promise which will be resolved or rejected depending on the result of the request. 
+	 */
+	getUserUpcomingEventsAttendance:function(username,dataType,createdAfter,page,order){
+		return sendRequest(urls.userUpcomingAttendance(this.key,username,dataType,createdAfter,page,order))
+			.then(scs,err);
+	},
+	/**
+	 * Retrieves a user's upcoming events of tracked artists of a user. 
+	 * @param {Number} username SongKick username of the user
+	 * @param {String} [dataType] can be either "json" or "xml" defaults to "json"
+	 * @param {String} [createdAfter] a date to filter the results, this must be in this format "YYYY-MM-DDTHH:mm:iiZ" defaults to undefined
+	 * @param {Number} [page] which page of the results to fetch, defaults to 0. 
+	 * @param {String} [order] the order in which the results should be sorted this can be either "asc" or "desc". 
+	 * @return {Promise} a promise which will be resolved or rejected depending on the result of the request. 
+	 */
+	getUserUpcomingTrackedArtist:function(username,dataType,createdAfter,page,order){
+		return sendRequest(urls.userUpcomingTrackedArtist(this.key,username,dataType,createdAfter,page,order))
+			.then(scs,err);
+	},
+	/**
+	 * Retrieves a user's past events of tracked artists of a user. 
+	 * @param {Number} username SongKick username of the user
+	 * @param {String} [dataType] can be either "json" or "xml" defaults to "json"
+	 * @param {String} [createdAfter] a date to filter the results, this must be in this format "YYYY-MM-DDTHH:mm:iiZ" defaults to undefined
+	 * @param {Number} [page] which page of the results to fetch, defaults to 0. 
+	 * @param {String} [order] the order in which the results should be sorted this can be either "asc" or "desc". 
+	 * @return {Promise} a promise which will be resolved or rejected depending on the result of the request. 
+	 */
+	getUserPastEvents:function(username,dataType,page,order){
+		return sendRequest(urls.userPastEvents(this.key,username,dataType,page,order))
+			.then(scs,err);
+	},
+	/**
+	 * Retrieves a user's events of tracked artists of a user. 
+	 * @param {Number} username SongKick username of the user
+	 * @param {String} [dataType] can be either "json" or "xml" defaults to "json"
+	 * @param {String} [createdAfter] a date to filter the results, this must be in this format "YYYY-MM-DDTHH:mm:iiZ" defaults to undefined
+	 * @param {Number} [page] which page of the results to fetch, defaults to 0. 
+	 * @param {String} [order] the order in which the results should be sorted this can be either "asc" or "desc". 
+	 * @return {Promise} a promise which will be resolved or rejected depending on the result of the request. 
+	 */
+	getUserEvents:function(username,dataType,createdAfter,page,order){
+		return sendRequest(urls.userEvents(this.key,username,dataType,createdAfter,page,order))
+			.then(scs,err);
+	},
+	/**
+	 * Retrieves an artist's past events given the artist's id. 
+	 * @param {Number} id SongKick id of the artist
+	 * @param {String} [dataType] can be either "json" or "xml" defaults to "json"
+	 * @param {String} [createdAfter] a date to filter the results, this must be in this format "YYYY-MM-DDTHH:mm:iiZ" defaults to undefined
+	 * @param {Number} [page] which page of the results to fetch, defaults to 0. 
+	 * @param {String} [order] the order in which the results should be sorted this can be either "asc" or "desc". 
+	 * @return {Promise} a promise which will be resolved or rejected depending on the result of the request. 
+	 */
+	getArtistPastEvents:function(id,dataType,page,order){
+		return sendRequest(urls.artistPastEvents(this.key,id,dataType,page,order))
+			.then(scs,err);
+	},
+	/**
+	 * Retrieves an artist's past events given the artist's MusicBrainz id. 
+	 * @param {Number} id MusicBrainz id of the artist
+	 * @param {String} [dataType] can be either "json" or "xml" defaults to "json"
+	 * @param {String} [createdAfter] a date to filter the results, this must be in this format "YYYY-MM-DDTHH:mm:iiZ" defaults to undefined
+	 * @param {Number} [page] which page of the results to fetch, defaults to 0. 
+	 * @param {String} [order] the order in which the results should be sorted this can be either "asc" or "desc". 
+	 * @return {Promise} a promise which will be resolved or rejected depending on the result of the request. 
+	 */
+	getArtistPastEventsUsingMusicBrainz:function(id,dataType,page,order){
+		return sendRequest(urls.artistPastEventsMusicBrainz(this.key,id,dataType,page,order))
+			.then(scs,err);	
+	},
+	/**
+	 * Retrieves the details of a given venue given its id. 
+	 * @param {Number} id SongKick id of the venue
+	 * @param {String} [dataType] can be either "json" or "xml" defaults to "json"
+	 * @param {String} [createdAfter] a date to filter the results, this must be in this format "YYYY-MM-DDTHH:mm:iiZ" defaults to undefined
+	 * @param {Number} [page] which page of the results to fetch, defaults to 0. 
+	 * @param {String} [order] the order in which the results should be sorted this can be either "asc" or "desc". 
+	 * @return {Promise} a promise which will be resolved or rejected depending on the result of the request. 
+	 */
+	getVenueDetails:function(id,dataType){
+		return sendRequest(urls.venueDetails(this.key,id,dataType))
+			.then(scs,err);
+	},
+	/**
+	 * Retrieves an event's set list given the venue's id. 
+	 * @param {Number} id SongKick id of the venue
+	 * @param {String} [dataType] can be either "json" or "xml" defaults to "json"
+	 * @param {String} [createdAfter] a date to filter the results, this must be in this format "YYYY-MM-DDTHH:mm:iiZ" defaults to undefined
+	 * @param {Number} [page] which page of the results to fetch, defaults to 0. 
+	 * @param {String} [order] the order in which the results should be sorted this can be either "asc" or "desc". 
+	 * @return {Promise} a promise which will be resolved or rejected depending on the result of the request. 
+	 */
+	getEventsSetList:function(id,dataType,page,order){
+		return sendRequest(urls.eventSetList(this.key,id,dataType,page,order))
+			.then(scs,err);
+	},
+	/**
+	 * Retrieves a list of similar artists given an artist id. 
+	 * @param {Number} id SongKick id of the artist
+	 * @param {String} [dataType] can be either "json" or "xml" defaults to "json"
+	 * @param {String} [createdAfter] a date to filter the results, this must be in this format "YYYY-MM-DDTHH:mm:iiZ" defaults to undefined
+	 * @param {Number} [page] which page of the results to fetch, defaults to 0. 
+	 * @param {String} [order] the order in which the results should be sorted this can be either "asc" or "desc". 
+	 * @return {Promise} a promise which will be resolved or rejected depending on the result of the request. 
+	 */
+	getSimilarArtists:function(id,dataType){
+		return sendRequest(urls.similarArtists(this.key,id,dataType))
+			.then(scs,err);
+	},
+
+};
+
+module.exports = {
+	/**
+	 * Factory method to create new SongKick instances
+	 * @name module:songkick-wrapper.create
+	 * @function
+	 * @memberOf module:songkick-wrapper
+	 * @param {string} key the SongKick API key 
+	 * @return {SongKick} new {@link SongKick|SongKick} instance
+	 */
+	create:function(key){
+		return new SongKick(key);
+	},
+	/**
+	 * Access the mock plugin of the module 
+	 * @name module:songkick-wrapper.mock
+	 */
+	mock:{
+		/**
+		 * @name module:songkick-wrapper.mock.setRequestFn
+		 * @memberof module:songkick-wrapper.
+		 * @instance
+		 */
+		setRequestFn:function(fn){
+			sendRequest = fn;
+		}
+	}
+};</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-songkick-wrapper.html">songkick-wrapper</a></li></ul><h3>Classes</h3><ul><li><a href="module-songkick-wrapper-SongKick.html">SongKick</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0</a> on Sat May 16 2015 12:27:21 GMT+0100 (BST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
