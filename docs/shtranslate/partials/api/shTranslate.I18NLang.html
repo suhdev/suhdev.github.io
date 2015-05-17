@@ -1,0 +1,85 @@
+<h1><code ng:non-bindable="">I18NLang</code>
+<div><span class="hint">service in module <code ng:non-bindable="">shTranslate</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="shtranslate-i18nlang-page"><p>Provides an object to create network resources</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_format">format(key, [replacements], [locale])</h3>
+<div class="format"><div class="shtranslate-i18nlang-format-page"><p>Retrieves an item from a translation repository given its key and placeholders replacements (if any). </p>
+</div><h5 id="methods_format_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>key</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="shtranslate-i18nlang-format-page"><p>the item key in the repository.
+The key can be a &quot;dot&quot; separated path i.e. &#39;nav.items.home&#39;. See the example below.</p>
+</div></td></tr><tr><td>[replacements]</td><td><a href="" class="label type-hint type-hint-array">array</a><a href="" class="label type-hint type-hint-object">object</a></td><td><div class="shtranslate-i18nlang-format-page"><p>either an array of the placeholders values, in such case
+the placeholders must use &#39;?&#39; to indicate a replacable item. This can also be an object literal
+with the keys being the placeholders in the text, and values are the values to use as replacements.
+See the example below </p>
+</div></td></tr><tr><td>[locale]</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="shtranslate-i18nlang-format-page"><p>the locale to use, if not provided, the default locale is used.</p>
+</div></td></tr></tbody></table><h4 id="methods_format_example">Example</h4>
+<div class="example"><div class="shtranslate-i18nlang-format-page"><p>Assuming the following translation repository </p>
+<pre><code class="lang-json">    {
+    &quot;navigation&quot;:{
+        &quot;items&quot;:{
+            &quot;home&quot;:&quot;This is just a ?. This is ?&quot;,
+            &quot;contactus&quot;:&quot;This is another :desc using :type&quot;,
+            &quot;about&quot;:&quot;About Us&quot;,
+            &quot;back&quot;:&quot;Back&quot;,
+            &quot;lang&quot;:&quot;Switch language&quot;
+        }
+    }
+    }</code></pre>
+<pre><code class="lang-javascript">angular.module(&#39;TestApp&#39;,[&#39;shTranslate&#39;])
+    .config([&#39;I18LangProvider&#39;,function(IP){
+         //adding multpile repositories 
+         IP.addRepository({
+            &#39;en-US&#39;:&#39;/translate/translation_en.json&#39;
+         });
+         //now set the default locale 
+         IP.setLocale(&#39;en-US&#39;);
+         //now set the fallback locale
+         IP.setFallbackLocale(&#39;en-US&#39;)
+        }]);
+    angular.module(&#39;TestApp&#39;)
+        .controller(&#39;TestCtrl&#39;,[&#39;$scope&#39;,&#39;I18NLang&#39;,function($S,LL){
+        var label = LL.format(&#39;navigation.items.about&#39;); 
+        console.log(label);
+        //prints &#39;About Us&#39;
+        label = LL.format(&#39;navigation.items.home&#39;,[&#39;Test&#39;,&#39;silly&#39;]);
+        console.log(label)
+        //prints &#39;This is just a test. This is silly&#39;
+        label = LL.format(&#39;navigation.items.contactus&#39;,{
+            desc:&#39;example&#39;,
+            type:&#39;object literals&#39;
+        });
+        console.log(label);
+        //prints &#39;This is another example using object literals&#39;
+    }]);</code></pre>
+</div></div>
+</div>
+</li>
+<li><h3 id="methods_isfallbacklocaleloaded">isFallbackLocaleLoaded()</h3>
+<div class="isfallbacklocaleloaded"><div class="shtranslate-i18nlang-isfallbacklocaleloaded-page"><p>Return true when the fallback locale is loaded, false otherwsie. </p>
+</div><h5 id="methods_isfallbacklocaleloaded_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">boolean</a></td><td><div class="shtranslate-i18nlang-isfallbacklocaleloaded-page"><p>true when locale is loaded, false otherwise.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_islocaleloaded">isLocaleLoaded()</h3>
+<div class="islocaleloaded"><div class="shtranslate-i18nlang-islocaleloaded-page"><p>Return true when the default locale is loaded, false otherwsie. </p>
+</div><h5 id="methods_islocaleloaded_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">boolean</a></td><td><div class="shtranslate-i18nlang-islocaleloaded-page"><p>true when locale is loaded, false otherwise.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_ready">ready()</h3>
+<div class="ready"><div class="shtranslate-i18nlang-ready-page"><p>returns a promise that is resolved when the default locale is loaded.
+This is only if the translation repositories are loaded lazily. In case the repositories
+are actively loaded. The promise will be resolved. </p>
+</div><h5 id="methods_ready_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">object</a></td><td><div class="shtranslate-i18nlang-ready-page"><p>q promise</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_setlocale">setLocale(loc)</h3>
+<div class="setlocale"><div class="shtranslate-i18nlang-setlocale-page"><p>Sets the default locale </p>
+</div><h5 id="methods_setlocale_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>loc</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="shtranslate-i18nlang-setlocale-page"><p>the locale to set as the default.</p>
+</div></td></tr></tbody></table></div>
+</li>
+</ul>
+</div>
+</div>

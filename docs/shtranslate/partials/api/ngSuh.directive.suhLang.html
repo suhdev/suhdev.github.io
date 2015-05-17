@@ -1,0 +1,52 @@
+<h1><code ng:non-bindable="">suhLang</code>
+<div><span class="hint">directive in module <code ng:non-bindable="">ngSuh</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="ngsuh-directive-page ngsuh-directive-suhlang-page"><p>Imports the required translations into the i18n object of the scope. See the example below
+<h4 id="description_source">Source</h4>
+<div source-edit="Suhail" source-edit-deps="angular.js script.js" source-edit-html="index.html-30" source-edit-css="" source-edit-js="script.js-31" source-edit-json="" source-edit-unit="" source-edit-scenario=""></div>
+<div class="tabbable"><div class="tab-pane" title="index.html">
+<pre class="prettyprint linenums" ng-set-text="index.html-30" ng-html-wrap-loaded="Suhail angular.js script.js"></pre>
+<script type="text/ng-template" id="index.html-30">
+  <div class="container" >
+    <div ng-bind="i18n.kick_boxing" suh-lang-group="kick.throw" suh-lang="kick.boxing" ng-attr-title="{{i18n.kick_boxing}}" ng-attr-cx="{{i18n.kick_throw}}">
+    </div>
+    <div ng-controller="TestCtrl as ctrl" >
+      <button ng-click="ctrl.switchLanguage()">Switch</button>
+    </div>
+  </div>
+</script>
+</div>
+<div class="tab-pane" title="script.js">
+<pre class="prettyprint linenums" ng-set-text="script.js-31"></pre>
+<script type="text/ng-template" id="script.js-31">
+  angular.module('Suhail',['ngSuh'])
+      .config(['I18NLangProvider',function (IP) {
+        IP.setLocale("en-GB");
+        IP.setFallbackLocale("en-GB");
+        IP.addRepository({
+          "en-GB":"/translation_en.json",
+          "ar-SA":"/translation_ar.json"
+        });
+      }]);
+    angular.module('Suhail')
+      .controller('TestCtrl', ['$scope','I18NLang', function ($S,LANG) {
+        var langs = ['en-GB','ar-SA'];
+        this.switchLanguage = function(){
+          langs.push(langs.shift());
+          LANG.setLocale(langs[0]);
+        };
+      }])
+</script>
+</div>
+</div><h4 id="description_demo">Demo</h4>
+<div class="well doc-example-live animate-container" ng-embed-app="Suhail" ng-set-html="index.html-30" ng-eval-javascript="script.js-31"></div>
+</div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage">as attribute<pre class="prettyprint linenums">&lt;ANY suh-lang&gt;
+   ...
+&lt;/ANY&gt;</pre>
+</div>
+</div>

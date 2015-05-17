@@ -1,0 +1,105 @@
+<h1><code ng:non-bindable="">I18NLangProvider</code>
+<div><span class="hint">object in module <code ng:non-bindable="">ngSuh</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="ngsuh-provider-page ngsuh-provider-i18nlangprovider-page"><p>A translation provider which makes it easier to bootstrap the locales repositories and 
+setting both the default locale and the fallback locale. </p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_addrepository">addRepository(loc, url)</h3>
+<div class="addrepository"><div class="ngsuh-i18nlangprovider-addrepository-page"><p>Adds a translation repository or a set of translation repositories to the service.
+Note that the actual request to load the translation library will not be sent at
+this stage. </p>
+</div><h5 id="methods_addrepository_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>loc</td><td><a href="" class="label type-hint type-hint-string">string</a><a href="" class="label type-hint type-hint-obj">obj</a></td><td><div class="ngsuh-i18nlangprovider-addrepository-page"><p>either the location of the repository or an object
+literal with the keys being the locales and the values the URLs of the 
+translation files. If the provided values are object literals, then these 
+values will be used as translation databases for their locales. </p>
+</div></td></tr><tr><td>url</td><td><a href="" class="label type-hint type-hint-string">string</a><a href="" class="label type-hint type-hint-object">object</a></td><td><div class="ngsuh-i18nlangprovider-addrepository-page"><p>the location of the translation repository. If an
+object literal is provided, the object will be used as a translation database
+for the provided locale</p>
+</div></td></tr></tbody></table><h4 id="methods_addrepository_example">Example</h4>
+<div class="example"><div class="ngsuh-i18nlangprovider-addrepository-page"><pre><code class="lang-javascript">//adding a single repository 
+angular.module(&#39;TestMod&#39;,[&#39;ngSuh&#39;])
+    .config([&#39;I18LangProvider&#39;,function(IP){
+        //add a single repository 
+     IP.addRepository(&#39;en-US&#39;,&#39;/translate/translation_en.json&#39;);
+     //adding multpile repositories 
+     IP.addRepository({
+         &#39;ar-SA&#39;:&#39;/translate/translation_ar.json&#39;,
+        &#39;en-US&#39;:&#39;/translate/translation_en.json&#39;
+     });
+     //adding repositories manually
+     IP.addRepository({
+        &#39;it-IT&#39;:{
+            &#39;home&#39;:{
+                &#39;navigation&#39;:{
+                    &#39;about-us&#39;:&#39;About Us&#39;
+                }
+            }
+        }
+     });
+    }]);</code></pre>
+</div></div>
+</div>
+</li>
+<li><h3 id="methods_setfallbacklocale">setFallbackLocale(loc)</h3>
+<div class="setfallbacklocale"><div class="ngsuh-i18nlangprovider-setfallbacklocale-page"><p>Sets the fallback locale of the application. 
+By default the fallback locale is set to &#39;en-US&#39;. 
+The fallback locale is used when a translation key couldn&#39;t be found
+in the current active locale. </p>
+</div><h5 id="methods_setfallbacklocale_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>loc</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="ngsuh-i18nlangprovider-setfallbacklocale-page"><p>the locale to set it as the fallback locale</p>
+</div></td></tr></tbody></table><h4 id="methods_setfallbacklocale_example">Example</h4>
+<div class="example"><div class="ngsuh-i18nlangprovider-setfallbacklocale-page"><pre><code class="lang-javascript">//adding a single repository 
+angular.module(&#39;TestMod&#39;,[&#39;ngSuh&#39;])
+    .config([&#39;I18LangProvider&#39;,function(IP){
+        //add a single repository 
+     IP.addRepository(&#39;en-US&#39;,&#39;/translate/translation_en.json&#39;);
+     //adding multpile repositories 
+     IP.addRepository({
+         &#39;ar-SA&#39;:&#39;/translate/translation_ar.json&#39;,
+        &#39;en-US&#39;:&#39;/translate/translation_en.json&#39;
+     });
+     //now set the default locale 
+     IP.setLocale(&#39;ar-SA&#39;);
+     //now set the fallback locale
+     IP.setFallbackLocale(&#39;en-US&#39;)
+
+    }]);</code></pre>
+</div></div>
+</div>
+</li>
+<li><h3 id="methods_setloadlazily">setLoadLazily(e)</h3>
+<div class="setloadlazily"><div class="ngsuh-i18nlangprovider-setloadlazily-page"><p>Sets whether the translation repositories should be loaded lazily (when needed) or 
+loaded upon the initialization of the translation service. By default only the default i.e. (set to true) 
+locale and the fallback locale (if available) are loaded upon initialization, 
+all other repositories are loaded when the locale is changed to that specific locale. </p>
+</div><h5 id="methods_setloadlazily_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>e</td><td><a href="" class="label type-hint type-hint-boolean">boolean</a></td><td><div class="ngsuh-i18nlangprovider-setloadlazily-page"><p>either true or false, true to load translation repositories lazily
+i.e. only when they&#39;re needed, false to load them as soon as the translation service is initialized.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_setlocale">setLocale(loc)</h3>
+<div class="setlocale"><div class="ngsuh-i18nlangprovider-setlocale-page"><p>Sets the default locale of the application. 
+By default the locale is set to &#39;en-US&#39;.  </p>
+</div><h5 id="methods_setlocale_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>loc</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="ngsuh-i18nlangprovider-setlocale-page"><p>the locale to set it as the default locale</p>
+</div></td></tr></tbody></table><h4 id="methods_setlocale_example">Example</h4>
+<div class="example"><div class="ngsuh-i18nlangprovider-setlocale-page"><pre><code class="lang-javascript">//adding a single repository 
+angular.module(&#39;TestMod&#39;,[&#39;ngSuh&#39;])
+    .config([&#39;I18LangProvider&#39;,function(IP){
+        //add a single repository 
+     IP.addRepository(&#39;en-US&#39;,&#39;/translate/translation_en.json&#39;);
+     //adding multpile repositories 
+     IP.addRepository({
+         &#39;ar-SA&#39;:&#39;/translate/translation_ar.json&#39;,
+        &#39;en-US&#39;:&#39;/translate/translation_en.json&#39;
+     });
+     //now set the default locale 
+     IP.setLocale(&#39;en-US&#39;);
+    }]);</code></pre>
+</div></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
