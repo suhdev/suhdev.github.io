@@ -1,0 +1,1404 @@
+/* line 5, ../../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 7, ../../sass/partials/_base.scss */
+body {
+  color: #000;
+  line-height: 1.23em;
+  background-image: url(../img/background.png);
+}
+
+/* line 14, ../../sass/partials/_base.scss */
+#SplashScreen {
+  display: none;
+}
+
+/* line 18, ../../sass/partials/_base.scss */
+#CopyToClipboardEl {
+  margin: 0 auto;
+}
+
+/* line 23, ../../sass/partials/_base.scss */
+#MainContent .comic-list .comic-container, #MainContent .comic-list li .comic-title, #MainContent li.active .comic-container, .ze-modal .content-box, .btn, .btn-default, .btn-blue, .btn-action, .button-info {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 28, ../../sass/partials/_base.scss */
+.no-user-select, .footer .social-link-container li {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src: url("fonts/icomoon.eot?xn9dkm");
+  src: url("fonts/icomoon.eot?xn9dkm#iefix") format("embedded-opentype"), url("fonts/icomoon.ttf?xn9dkm") format("truetype"), url("fonts/icomoon.woff?xn9dkm") format("woff"), url("fonts/icomoon.svg?xn9dkm#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 46, ../../sass/partials/_base.scss */
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 61, ../../sass/partials/_base.scss */
+.icon-back-to-top:before {
+  content: "\e900";
+}
+
+/* line 64, ../../sass/partials/_base.scss */
+.icon-info:before {
+  content: "\e901";
+}
+
+/* line 67, ../../sass/partials/_base.scss */
+.icon-facebook:before {
+  content: "\e906";
+}
+
+/* line 70, ../../sass/partials/_base.scss */
+.icon-twitter:before {
+  content: "\e90c";
+}
+
+/* line 73, ../../sass/partials/_base.scss */
+.icon-code:before {
+  content: "\f121";
+}
+
+/* line 1, ../../sass/partials/_header.scss */
+#Header {
+  position: relative;
+  width: 100%;
+  height: 74px;
+  background: url(../img/header-image-blue.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-align: center;
+}
+/* line 12, ../../sass/partials/_header.scss */
+#Header .campaign-logo {
+  width: 104px;
+  margin-top: 5px;
+}
+/* line 17, ../../sass/partials/_header.scss */
+#Header .client-logo {
+  display: none;
+}
+/* line 21, ../../sass/partials/_header.scss */
+#Header .campaign-description {
+  display: none;
+}
+@media (min-width: 768px) {
+  /* line 1, ../../sass/partials/_header.scss */
+  #Header {
+    height: 465px;
+  }
+  /* line 27, ../../sass/partials/_header.scss */
+  #Header .campaign-description {
+    display: block;
+    width: 800px;
+    margin: 0 auto;
+    color: #fff;
+  }
+  /* line 33, ../../sass/partials/_header.scss */
+  #Header .campaign-logo {
+    width: 556px;
+    margin-top: 0px;
+  }
+  /* line 37, ../../sass/partials/_header.scss */
+  #Header .client-logo-container {
+    width: 100%;
+  }
+  /* line 39, ../../sass/partials/_header.scss */
+  #Header .client-logo-container .client-logo {
+    display: inline-block;
+    width: 155px;
+    margin-top: 5px;
+  }
+}
+
+/* line 47, ../../sass/partials/_header.scss */
+.nav-bar {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 37px;
+  text-align: center;
+}
+/* line 54, ../../sass/partials/_header.scss */
+.nav-bar .nav-list {
+  height: 100%;
+  width: 100%;
+}
+/* line 57, ../../sass/partials/_header.scss */
+.nav-bar .nav-list > li {
+  position: relative;
+  display: inline-block;
+  width: 23%;
+  height: 100%;
+}
+/* line 64, ../../sass/partials/_header.scss */
+.nav-bar .nav-list li {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -webkit-transition: background-color 400ms cubic-bezier(0, 0, 0, 1);
+  -moz-transition: background-color 400ms cubic-bezier(0, 0, 0, 1);
+  -ms-transition: background-color 400ms cubic-bezier(0, 0, 0, 1);
+  -o-transition: background-color 400ms cubic-bezier(0, 0, 0, 1);
+  transition: background-color 400ms cubic-bezier(0, 0, 0, 1);
+  font-family: "collector-comic", sans-serif;
+  font-size: 10px;
+  font-style: italic;
+  font-weight: 700;
+  background-color: #FFCA00;
+  color: #000033;
+  line-height: 36px;
+  vertical-align: middle;
+}
+/* line 65, ../../sass/partials/_header.scss */
+.nav-bar .nav-list li:hover {
+  cursor: pointer;
+}
+/* line 80, ../../sass/partials/_header.scss */
+.nav-bar .nav-list li:hover {
+  background-color: #FF0033;
+  color: #fff;
+}
+/* line 91, ../../sass/partials/_header.scss */
+.nav-bar .nav-list .parent-list:hover .sub-list {
+  display: inline-block;
+}
+/* line 96, ../../sass/partials/_header.scss */
+.nav-bar .nav-list .sub-list {
+  display: none;
+  position: absolute;
+  z-index: 9999;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 108px;
+}
+/* line 104, ../../sass/partials/_header.scss */
+.nav-bar .nav-list .sub-list li {
+  height: 36px;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  /* line 47, ../../sass/partials/_header.scss */
+  .nav-bar {
+    bottom: 0;
+    top: auto;
+    height: 76px;
+  }
+  /* line 115, ../../sass/partials/_header.scss */
+  .nav-bar .nav-list {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  /* line 118, ../../sass/partials/_header.scss */
+  .nav-bar .nav-list li {
+    line-height: 76px;
+    font-family: "collector-comic", sans-serif;
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 700;
+  }
+  /* line 125, ../../sass/partials/_header.scss */
+  .nav-bar .nav-list .sub-list {
+    z-index: 999999;
+  }
+  /* line 127, ../../sass/partials/_header.scss */
+  .nav-bar .nav-list .sub-list li {
+    height: 76px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* line 138, ../../sass/partials/_header.scss */
+  #Header.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../img/header-image-blue.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    text-align: center;
+    z-index: 99999;
+  }
+  /* line 152, ../../sass/partials/_header.scss */
+  #Header.fixed-header .campaign-logo {
+    width: 100%;
+    margin-top: 10px;
+  }
+  /* line 156, ../../sass/partials/_header.scss */
+  #Header.fixed-header .campaign-description {
+    display: block;
+    color: #fff;
+  }
+  /* line 161, ../../sass/partials/_header.scss */
+  #Header.fixed-header .header-container {
+    margin: 56px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+  }
+  /* line 171, ../../sass/partials/_header.scss */
+  #Header.fixed-header .nav-bar {
+    position: relative;
+    margin-top: 60px;
+  }
+}
+/* line 4, ../../sass/partials/_app.scss */
+#MainContent {
+  margin-bottom: 100px;
+}
+/* line 6, ../../sass/partials/_app.scss */
+#MainContent .comic-list {
+  margin: 0 18px;
+}
+/* line 8, ../../sass/partials/_app.scss */
+#MainContent .comic-list .comic-info,
+#MainContent .comic-list .comic-desc {
+  display: none;
+}
+/* line 17, ../../sass/partials/_app.scss */
+#MainContent .comic-list .close-comic-btn {
+  height: 42px;
+  width: 42px;
+  background-color: #fff;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: none;
+  z-index: 99999;
+}
+/* line 29, ../../sass/partials/_app.scss */
+#MainContent .comic-list .disable-list .close-comic-btn {
+  display: block;
+}
+/* line 34, ../../sass/partials/_app.scss */
+#MainContent .comic-list li {
+  margin: 10px 0;
+  height: 50px;
+  position: relative;
+}
+/* line 39, ../../sass/partials/_app.scss */
+#MainContent .comic-list li:hover {
+  cursor: pointer;
+}
+/* line 42, ../../sass/partials/_app.scss */
+#MainContent .comic-list li .comic-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: inherit;
+  background-color: #FF0033;
+  background-repeat: no-repeat;
+}
+/* line 49, ../../sass/partials/_app.scss */
+#MainContent .comic-list li .comic-image img {
+  height: 100%;
+}
+/* line 58, ../../sass/partials/_app.scss */
+#MainContent .comic-list li .close-comic {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 30px;
+  width: 40px;
+  display: none;
+}
+/* line 65, ../../sass/partials/_app.scss */
+#MainContent .comic-list li .close-comic img {
+  width: 24px;
+}
+/* line 67, ../../sass/partials/_app.scss */
+#MainContent .comic-list li .close-comic img:hover {
+  cursor: pointer;
+}
+/* line 72, ../../sass/partials/_app.scss */
+#MainContent .comic-list li .comic-title {
+  position: absolute;
+  top: 0;
+  left: 44px;
+  right: 68px;
+  height: inherit;
+  background-color: #3333ff;
+}
+/* line 80, ../../sass/partials/_app.scss */
+#MainContent .comic-list li .comic-title h2 {
+  position: absolute;
+  font-size: 13px;
+  margin-left: 10px;
+  z-index: 9997;
+  color: #fff;
+  text-transform: uppercase;
+}
+/* line 88, ../../sass/partials/_app.scss */
+#MainContent .comic-list li .comic-title .comic-publisher {
+  display: none;
+}
+/* line 91, ../../sass/partials/_app.scss */
+#MainContent .comic-list li .comic-title .comic-issue {
+  display: none;
+}
+/* line 94, ../../sass/partials/_app.scss */
+#MainContent .comic-list li .comic-title .comic-graph {
+  position: absolute;
+  background-color: #000033;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+/* line 103, ../../sass/partials/_app.scss */
+#MainContent .comic-list li .comic-price {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: inherit;
+  width: 64px;
+  background-color: #FFCA00;
+}
+/* line 110, ../../sass/partials/_app.scss */
+#MainContent .comic-list li .comic-price p {
+  line-height: 38px;
+  vertical-align: middle;
+  text-align: center;
+  font-style: italic;
+  color: #000033;
+  font-family: "collector-comic", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+}
+/* line 122, ../../sass/partials/_app.scss */
+#MainContent .comic-list li .comic-view-container {
+  display: none;
+}
+/* line 126, ../../sass/partials/_app.scss */
+#MainContent .comic-list li .comic-graph-wrapper {
+  display: none;
+}
+/* line 130, ../../sass/partials/_app.scss */
+#MainContent .comic-list li .comic-info .comic-desc {
+  display: none;
+}
+/* line 135, ../../sass/partials/_app.scss */
+#MainContent .comic-list li .comic-progress-bar {
+  position: absolute;
+  top: 45px;
+  left: 44px;
+  right: 68px;
+  height: 12px;
+}
+/* line 141, ../../sass/partials/_app.scss */
+#MainContent .comic-list li .comic-progress-bar .progress-bar {
+  line-height: 7px;
+  vertical-align: middle;
+  position: relative;
+  margin-left: 0px;
+  height: 8px;
+  width: 36%;
+  background-color: #FF0033;
+}
+/* line 149, ../../sass/partials/_app.scss */
+#MainContent .comic-list li .comic-progress-bar .progress-bar .progress-label {
+  position: absolute;
+  top: 0;
+  width: 50px;
+  right: -55px;
+  color: #FF0033;
+}
+/* line 162, ../../sass/partials/_app.scss */
+#MainContent li.active {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #000033;
+  margin: 0;
+  color: #fff;
+  overflow: auto;
+}
+/* line 173, ../../sass/partials/_app.scss */
+#MainContent li.active:hover {
+  cursor: auto;
+}
+/* line 176, ../../sass/partials/_app.scss */
+#MainContent li.active .close-comic {
+  display: block;
+}
+/* line 179, ../../sass/partials/_app.scss */
+#MainContent li.active .comic-container {
+  padding: 36px 36px 0 36px;
+  float: left;
+  height: 100%;
+}
+/* line 186, ../../sass/partials/_app.scss */
+#MainContent li.active .comic-info,
+#MainContent li.active .comic-desc {
+  display: block;
+  position: relative;
+}
+/* line 194, ../../sass/partials/_app.scss */
+#MainContent li.active .comic-image {
+  position: relative;
+  height: 200px;
+  float: left;
+}
+/* line 199, ../../sass/partials/_app.scss */
+#MainContent li.active .comic-info {
+  width: 40%;
+  margin-left: 12px;
+  height: auto;
+  float: left;
+}
+/* line 204, ../../sass/partials/_app.scss */
+#MainContent li.active .comic-info > div {
+  margin: 5px;
+}
+/* line 207, ../../sass/partials/_app.scss */
+#MainContent li.active .comic-info .comic-desc {
+  display: none;
+}
+/* line 213, ../../sass/partials/_app.scss */
+#MainContent li.active .comic-title {
+  position: relative;
+  float: left;
+  right: auto;
+  background-color: #000033;
+  left: auto;
+  width: 100%;
+  height: 40px;
+}
+/* line 221, ../../sass/partials/_app.scss */
+#MainContent li.active .comic-title h2 {
+  margin-left: 0;
+  font-size: 20px;
+}
+/* line 226, ../../sass/partials/_app.scss */
+#MainContent li.active .comic-title .comic-graph {
+  display: none;
+}
+/* line 229, ../../sass/partials/_app.scss */
+#MainContent li.active .comic-title .comic-value-time {
+  display: none;
+}
+/* line 232, ../../sass/partials/_app.scss */
+#MainContent li.active .comic-desc {
+  width: 100%;
+  float: left;
+  margin-top: 12px;
+  height: auto;
+}
+/* line 238, ../../sass/partials/_app.scss */
+#MainContent li.active .comic-graph-wrapper {
+  display: none;
+}
+/* line 241, ../../sass/partials/_app.scss */
+#MainContent li.active .comic-price {
+  position: relative;
+  float: left;
+  width: 40%;
+  margin-left: 12px;
+  background-color: transparent;
+  height: auto;
+  color: #FFCA00;
+}
+/* line 249, ../../sass/partials/_app.scss */
+#MainContent li.active .comic-price p {
+  margin-left: 6px;
+  text-align: left;
+}
+@media (min-width: 768px) {
+  /* line 260, ../../sass/partials/_app.scss */
+  #MainContent .comic-list {
+    margin-top: 26px;
+    margin: 0 5%;
+  }
+  /* line 263, ../../sass/partials/_app.scss */
+  #MainContent .comic-list li {
+    -webkit-transition: height 1s cubic-bezier(0, 0, 0, 1), background-color 1s cubic-bezier(0, 0, 0, 1), transform 1s cubic-bezier(0, 0, 0, 1);
+    -moz-transition: height 1s cubic-bezier(0, 0, 0, 1), background-color 1s cubic-bezier(0, 0, 0, 1), transform 1s cubic-bezier(0, 0, 0, 1);
+    -ms-transition: height 1s cubic-bezier(0, 0, 0, 1), background-color 1s cubic-bezier(0, 0, 0, 1), transform 1s cubic-bezier(0, 0, 0, 1);
+    -o-transition: height 1s cubic-bezier(0, 0, 0, 1), background-color 1s cubic-bezier(0, 0, 0, 1), transform 1s cubic-bezier(0, 0, 0, 1);
+    transition: height 1s cubic-bezier(0, 0, 0, 1), background-color 1s cubic-bezier(0, 0, 0, 1), transform 1s cubic-bezier(0, 0, 0, 1);
+    margin: 14px auto;
+    height: 100px;
+  }
+  /* line 273, ../../sass/partials/_app.scss */
+  #MainContent .comic-list li .comic-image {
+    height: inherit;
+    top: 0;
+    left: 0;
+    height: inherit;
+  }
+  /* line 278, ../../sass/partials/_app.scss */
+  #MainContent .comic-list li .comic-image img {
+    height: 100%;
+  }
+  /* line 282, ../../sass/partials/_app.scss */
+  #MainContent .comic-list li .comic-title {
+    height: inherit;
+    top: 0;
+    color: #fff;
+    left: 80px;
+    right: 120px;
+  }
+  /* line 288, ../../sass/partials/_app.scss */
+  #MainContent .comic-list li .comic-title h2 {
+    font-size: 30px;
+    vertical-align: middle;
+    margin-left: 0px;
+    left: 42px;
+    top: 14px;
+  }
+  /* line 297, ../../sass/partials/_app.scss */
+  #MainContent .comic-list li .comic-title .comic-publisher {
+    display: block;
+    position: absolute;
+    width: 50%;
+    height: 26px;
+    bottom: 16px;
+    left: 42px;
+    text-align: left;
+  }
+  /* line 305, ../../sass/partials/_app.scss */
+  #MainContent .comic-list li .comic-title .comic-publisher p {
+    font-size: 25px;
+  }
+  /* line 309, ../../sass/partials/_app.scss */
+  #MainContent .comic-list li .comic-title .comic-issue {
+    display: block;
+    position: absolute;
+    width: 50%;
+    height: 26px;
+    bottom: 5px;
+    left: 12px;
+  }
+  /* line 317, ../../sass/partials/_app.scss */
+  #MainContent .comic-list li .comic-title .comic-value-time {
+    display: block;
+    position: absolute;
+    width: 50%;
+    height: 26px;
+    bottom: 16px;
+    right: 42px;
+    text-align: right;
+    -webkit-transition: width 1s cubic-bezier(0, 0, 0, 1);
+    -moz-transition: width 1s cubic-bezier(0, 0, 0, 1);
+    -ms-transition: width 1s cubic-bezier(0, 0, 0, 1);
+    -o-transition: width 1s cubic-bezier(0, 0, 0, 1);
+    transition: width 1s cubic-bezier(0, 0, 0, 1);
+  }
+  /* line 325, ../../sass/partials/_app.scss */
+  #MainContent .comic-list li .comic-title .comic-value-time p {
+    font-size: 25px;
+  }
+  /* line 336, ../../sass/partials/_app.scss */
+  #MainContent .comic-list li .comic-price {
+    height: inherit;
+    top: 0;
+    right: 0;
+    width: 118px;
+  }
+  /* line 341, ../../sass/partials/_app.scss */
+  #MainContent .comic-list li .comic-price p {
+    line-height: 118px;
+    vertical-align: middle;
+    font-size: 24px;
+  }
+  /* line 347, ../../sass/partials/_app.scss */
+  #MainContent .comic-list li .comic-desc {
+    display: none;
+  }
+  /* line 351, ../../sass/partials/_app.scss */
+  #MainContent .comic-list li .comic-progress-bar {
+    bottom: 7px;
+    top: auto;
+    left: 120px;
+  }
+  /* line 355, ../../sass/partials/_app.scss */
+  #MainContent .comic-list li .comic-progress-bar .progress-bar {
+    height: 18px;
+  }
+  /* line 366, ../../sass/partials/_app.scss */
+  #MainContent li.active {
+    position: relative;
+    height: 515px;
+    margin: 14px auto;
+    overflow: hidden;
+  }
+  /* line 371, ../../sass/partials/_app.scss */
+  #MainContent li.active:hover {
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+  /* line 378, ../../sass/partials/_app.scss */
+  #MainContent li.active .comic-container {
+    padding: 36px 80px 0 80px;
+    float: left;
+    height: auto;
+    width: 100%;
+  }
+  /* line 386, ../../sass/partials/_app.scss */
+  #MainContent li.active .comic-info {
+    display: block;
+    position: relative;
+  }
+  /* line 393, ../../sass/partials/_app.scss */
+  #MainContent li.active .comic-image {
+    position: relative;
+    width: 40%;
+    height: 380px;
+    float: left;
+  }
+  /* line 399, ../../sass/partials/_app.scss */
+  #MainContent li.active .comic-info {
+    width: 52%;
+    height: auto;
+    float: left;
+    margin-left: 42px;
+  }
+  /* line 404, ../../sass/partials/_app.scss */
+  #MainContent li.active .comic-info > div {
+    margin: 0px;
+  }
+  /* line 407, ../../sass/partials/_app.scss */
+  #MainContent li.active .comic-info .comic-desc {
+    display: block;
+    float: left;
+    width: 100%;
+  }
+  /* line 413, ../../sass/partials/_app.scss */
+  #MainContent li.active .comic-info .comic-issue {
+    margin-top: 12px;
+    float: left;
+    width: 100%;
+  }
+  /* line 421, ../../sass/partials/_app.scss */
+  #MainContent li.active .comic-title {
+    position: relative;
+    float: left;
+    right: auto;
+    left: auto;
+    height: 38px;
+    width: 100%;
+    background-color: transparent;
+  }
+  /* line 429, ../../sass/partials/_app.scss */
+  #MainContent li.active .comic-title h2 {
+    top: 0;
+    left: 0;
+    line-height: 38px;
+  }
+  /* line 435, ../../sass/partials/_app.scss */
+  #MainContent li.active .comic-title .comic-issue {
+    display: none;
+  }
+  /* line 438, ../../sass/partials/_app.scss */
+  #MainContent li.active .comic-title .comic-publisher {
+    display: none;
+  }
+  /* line 441, ../../sass/partials/_app.scss */
+  #MainContent li.active .comic-title .comic-value-time {
+    display: none;
+  }
+  /* line 444, ../../sass/partials/_app.scss */
+  #MainContent li.active .comic-desc {
+    width: 50%;
+    float: right;
+    margin-top: 12px;
+  }
+  /* line 450, ../../sass/partials/_app.scss */
+  #MainContent li.active .comic-price {
+    position: relative;
+    float: left;
+    margin-left: 42px;
+    width: 50%;
+    height: 50px;
+    background-color: transparent;
+  }
+  /* line 457, ../../sass/partials/_app.scss */
+  #MainContent li.active .comic-price p {
+    color: #FFCA00;
+    line-height: 50px;
+    margin-left: 0px;
+    text-align: left;
+  }
+  /* line 465, ../../sass/partials/_app.scss */
+  #MainContent li.active .comic-graph-wrapper {
+    float: left;
+    margin-left: 40px;
+    width: 52%;
+  }
+  /* line 470, ../../sass/partials/_app.scss */
+  #MainContent li.active .comic-view-container {
+    display: block;
+    margin-left: 40px;
+    float: left;
+  }
+  /* line 474, ../../sass/partials/_app.scss */
+  #MainContent li.active .comic-view-container .comic-show-info {
+    float: left;
+  }
+  /* line 478, ../../sass/partials/_app.scss */
+  #MainContent li.active .comic-view-container .comic-show-graph {
+    float: left;
+  }
+  /* line 483, ../../sass/partials/_app.scss */
+  #MainContent li.active .comic-progress-bar {
+    margin-top: 20px;
+    position: relative;
+    left: auto;
+    right: auto;
+    float: left;
+    width: 100%;
+  }
+  /* line 490, ../../sass/partials/_app.scss */
+  #MainContent li.active .comic-progress-bar .progress-bar {
+    line-height: 20px;
+    vertical-align: middle;
+    height: 18px;
+  }
+}
+
+/* line 509, ../../sass/partials/_app.scss */
+#MainContent .social-link-container {
+  display: none;
+}
+/* line 512, ../../sass/partials/_app.scss */
+#MainContent .social-link-container li a {
+  color: #fff;
+  text-decoration: none;
+}
+@media (min-width: 768px) {
+  /* line 520, ../../sass/partials/_app.scss */
+  #MainContent .social-link-container {
+    text-align: center;
+    margin-top: 20px;
+    display: block;
+  }
+  /* line 524, ../../sass/partials/_app.scss */
+  #MainContent .social-link-container li {
+    font-family: "Roboto", sans-serif;
+    color: #fff;
+    background-color: #FF0033;
+    text-align: center;
+    line-height: 40px;
+    vertical-align: middle;
+    display: inline-block;
+    -webkit-transition: background-color 1s cubic-bezier(0, 0, 0, 1);
+    -moz-transition: background-color 1s cubic-bezier(0, 0, 0, 1);
+    -ms-transition: background-color 1s cubic-bezier(0, 0, 0, 1);
+    -o-transition: background-color 1s cubic-bezier(0, 0, 0, 1);
+    transition: background-color 1s cubic-bezier(0, 0, 0, 1);
+    position: relative;
+    width: 75px;
+    height: 75px;
+  }
+  /* line 541, ../../sass/partials/_app.scss */
+  #MainContent .social-link-container li i {
+    line-height: 75px;
+    vertical-align: middle;
+    font-size: 50px;
+  }
+  /* line 546, ../../sass/partials/_app.scss */
+  #MainContent .social-link-container li:hover {
+    background-color: #ff335c;
+    cursor: pointer;
+  }
+}
+
+/* line 556, ../../sass/partials/_app.scss */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  z-index: 99997;
+}
+/* line 565, ../../sass/partials/_app.scss */
+.footer .social-link-container li {
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  background-color: #FF0033;
+  text-align: center;
+  line-height: 40px;
+  vertical-align: middle;
+}
+/* line 573, ../../sass/partials/_app.scss */
+.footer .social-link-container li a {
+  color: #fff;
+  text-decoration: none;
+}
+/* line 579, ../../sass/partials/_app.scss */
+.footer .social-link-container .em-link {
+  display: none;
+}
+/* line 585, ../../sass/partials/_app.scss */
+.footer .social-link-container .fb-link {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 40%;
+  height: 40px;
+  line-height: 40px;
+  vertical-align: middle;
+}
+/* line 593, ../../sass/partials/_app.scss */
+.footer .social-link-container .fb-link i {
+  line-height: 40px;
+  vertical-align: middle;
+  font-size: 22px;
+}
+/* line 600, ../../sass/partials/_app.scss */
+.footer .social-link-container .tw-link {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 40%;
+  height: 40px;
+  line-height: 40px;
+  vertical-align: middle;
+}
+/* line 608, ../../sass/partials/_app.scss */
+.footer .social-link-container .tw-link i {
+  line-height: 40px;
+  vertical-align: middle;
+  font-size: 22px;
+}
+/* line 615, ../../sass/partials/_app.scss */
+.footer .social-link-container .if-link {
+  position: fixed;
+  bottom: 0;
+  right: 41%;
+  left: 41%;
+  height: 40px;
+}
+/* line 621, ../../sass/partials/_app.scss */
+.footer .social-link-container .if-link i {
+  line-height: 40px;
+  vertical-align: middle;
+  font-size: 34px;
+}
+/* line 628, ../../sass/partials/_app.scss */
+.footer .social-link-container .st-link {
+  position: fixed;
+  background-color: #fff;
+  bottom: 46px;
+  right: 12px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+}
+/* line 636, ../../sass/partials/_app.scss */
+.footer .social-link-container .st-link i {
+  font-size: 42px;
+  color: #FF0033;
+}
+/* line 639, ../../sass/partials/_app.scss */
+.footer .social-link-container .st-link i:hover {
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  /* line 648, ../../sass/partials/_app.scss */
+  .footer .social-link-container {
+    display: none;
+    position: absolute;
+    left: 20%;
+    right: 20%;
+    bottom: 0;
+    top: 0;
+    text-align: center;
+  }
+  /* line 656, ../../sass/partials/_app.scss */
+  .footer .social-link-container li {
+    display: inline-block;
+    width: 20% !important;
+    -webkit-transition: background-color 1s cubic-bezier(0, 0, 0, 1);
+    -moz-transition: background-color 1s cubic-bezier(0, 0, 0, 1);
+    -ms-transition: background-color 1s cubic-bezier(0, 0, 0, 1);
+    -o-transition: background-color 1s cubic-bezier(0, 0, 0, 1);
+    transition: background-color 1s cubic-bezier(0, 0, 0, 1);
+  }
+  /* line 666, ../../sass/partials/_app.scss */
+  .footer .social-link-container li:hover {
+    background-color: #ff335c;
+    cursor: pointer;
+  }
+  /* line 672, ../../sass/partials/_app.scss */
+  .footer .social-link-container .st-link {
+    width: 42px !important;
+  }
+  /* line 675, ../../sass/partials/_app.scss */
+  .footer .social-link-container .fb-link {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
+  }
+  /* line 683, ../../sass/partials/_app.scss */
+  .footer .social-link-container .tw-link {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
+  }
+  /* line 690, ../../sass/partials/_app.scss */
+  .footer .social-link-container .if-link {
+    width: 42px !important;
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
+  }
+  /* line 697, ../../sass/partials/_app.scss */
+  .footer .social-link-container .em-link {
+    position: relative;
+    display: inline-block;
+    bottom: auto;
+    left: auto;
+    right: auto;
+  }
+}
+
+/* line 711, ../../sass/partials/_app.scss */
+.comic-container {
+  height: 100%;
+}
+
+/* line 2, ../../sass/partials/_graphcontroller.scss */
+.comic-graph-wrapper .comic-graph-container {
+  width: 332px;
+  height: 345px;
+}
+/* line 6, ../../sass/partials/_graphcontroller.scss */
+.comic-graph-wrapper .comic-graph-container path {
+  stroke: #FF0033;
+  stroke-width: 2;
+  fill: none;
+}
+/* line 12, ../../sass/partials/_graphcontroller.scss */
+.comic-graph-wrapper .comic-graph-container .axis path,
+.comic-graph-wrapper .comic-graph-container .axis line {
+  fill: none;
+  stroke: white;
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+}
+/* line 20, ../../sass/partials/_graphcontroller.scss */
+.comic-graph-wrapper .comic-graph-container .axis .tick {
+  fill: #fff;
+}
+/* line 26, ../../sass/partials/_graphcontroller.scss */
+.comic-graph-wrapper .comic-graph-container .axis-label {
+  text-anchor: end;
+  fill: #FFCA00;
+}
+
+/* line 1, ../../sass/partials/_modal.scss */
+.ze-modal {
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  z-index: 99997;
+}
+/* line 10, ../../sass/partials/_modal.scss */
+.ze-modal .ze-backdrop {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: initial;
+}
+/* line 19, ../../sass/partials/_modal.scss */
+.ze-modal .content-box {
+  background-color: #FF0033;
+  margin: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  position: absolute;
+  word-wrap: break-word;
+  z-index: 99999;
+}
+/* line 31, ../../sass/partials/_modal.scss */
+.ze-modal .content-box .modal-title {
+  position: relative;
+}
+/* line 33, ../../sass/partials/_modal.scss */
+.ze-modal .content-box .modal-title h2 {
+  color: #fff;
+  font-family: "collector-comic", sans-serif;
+}
+/* line 37, ../../sass/partials/_modal.scss */
+.ze-modal .content-box .modal-title img {
+  float: left;
+  margin-left: 4ex;
+}
+/* line 42, ../../sass/partials/_modal.scss */
+.ze-modal .content-box .modal-content {
+  color: #fff;
+  margin-top: 3ex;
+  background-color: #FF0033;
+  text-align: center;
+}
+/* line 48, ../../sass/partials/_modal.scss */
+.ze-modal .content-box .modal-content p {
+  text-align: left;
+}
+/* line 51, ../../sass/partials/_modal.scss */
+.ze-modal .content-box .modal-content textarea {
+  background-color: #fff;
+  color: #000;
+  font-size: 12px;
+  resize: none;
+  width: 100%;
+  border: 1px solid #000;
+  padding: 8px;
+}
+/* line 60, ../../sass/partials/_modal.scss */
+.ze-modal .content-box .modal-content .btn-default {
+  display: inline-block;
+}
+/* line 66, ../../sass/partials/_modal.scss */
+.ze-modal .close-button {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+  height: 35px;
+  width: 35px;
+  z-index: 9999;
+}
+/* line 75, ../../sass/partials/_modal.scss */
+.ze-modal .modal-content {
+  background-color: #00131B;
+  box-shadow: none;
+  border: none;
+}
+
+@media (min-width: 768px) {
+  /* line 85, ../../sass/partials/_modal.scss */
+  .ze-modal .modal-content {
+    width: 100%;
+  }
+  /* line 88, ../../sass/partials/_modal.scss */
+  .ze-modal .ze-backdrop {
+    z-index: 99997;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  /* line 93, ../../sass/partials/_modal.scss */
+  .ze-modal .content-box {
+    background-color: #FF0033;
+    position: absolute;
+    width: 700px;
+    height: 400px;
+    margin-left: -350px;
+    left: 50%;
+    top: 20%;
+    overflow: auto;
+  }
+}
+
+/* line 1, ../../sass/partials/_buttons.scss */
+.btn, .btn-default, .btn-blue, .btn-action, .button-info {
+  cursor: pointer;
+  font-size: 1.125rem;
+  text-align: center;
+}
+
+/* line 8, ../../sass/partials/_buttons.scss */
+.btn-share {
+  width: 100px;
+  height: 54px;
+  color: white;
+  background-color: #FFCA00;
+}
+/* line 14, ../../sass/partials/_buttons.scss */
+.btn-share:hover {
+  background-color: #000033;
+}
+/* line 18, ../../sass/partials/_buttons.scss */
+.btn-share.info {
+  width: 54px;
+}
+
+/* line 25, ../../sass/partials/_buttons.scss */
+.btn .btn-label, .btn-default .btn-label {
+  background-color: #FF0033;
+  padding: 8px;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+}
+/* line 26, ../../sass/partials/_buttons.scss */
+.btn .btn-label:hover, .btn-default .btn-label:hover {
+  background-color: #ff2450;
+}
+
+/* line 37, ../../sass/partials/_buttons.scss */
+.btn-blue {
+  width: 150px;
+}
+/* line 40, ../../sass/partials/_buttons.scss */
+.btn-blue .btn-label {
+  background-color: #000033;
+  padding: 8px;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+}
+/* line 41, ../../sass/partials/_buttons.scss */
+.btn-blue .btn-label:hover {
+  background-color: #000057;
+}
+
+/* line 51, ../../sass/partials/_buttons.scss */
+.btn-action {
+  background-color: #000;
+}
+/* line 54, ../../sass/partials/_buttons.scss */
+.btn-action .btn-label {
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+}
+/* line 57, ../../sass/partials/_buttons.scss */
+.btn-action .btn-label:hover {
+  color: #000;
+}
+/* line 61, ../../sass/partials/_buttons.scss */
+.btn-action .btn-icon {
+  color: #fff;
+  margin-top: -10px;
+}
+
+/* line 1, ../../sass/partials/_typography.scss */
+h1, h2 {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-family: "collector-comic", sans-serif;
+}
+
+/* line 9, ../../sass/partials/_typography.scss */
+p, .paragarph-1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.25rem;
+}
+
+/* line 14, ../../sass/partials/_typography.scss */
+h1 {
+  font-size: 2.8125rem;
+  line-height: 3rem;
+}
+
+/* line 20, ../../sass/partials/_typography.scss */
+h2 {
+  font-size: 1.625rem;
+  line-height: 2.25rem;
+  font-family: "Roboto", sans-serif;
+}
+
+/* line 27, ../../sass/partials/_typography.scss */
+h3 {
+  font-size: 1.375rem;
+  line-height: 2rem;
+}
+
+/* line 32, ../../sass/partials/_typography.scss */
+h4 {
+  font-size: 1.125rem;
+  line-height: 1.5625rem;
+}
+
+/* line 37, ../../sass/partials/_typography.scss */
+p, .paragarph-1 {
+  font-size: 1rem;
+  line-height: 1.5625rem;
+}
+
+/* line 1, ../../sass/partials/_splashscreen.scss */
+#SplashScreen {
+  background: #fff;
+  background: url(../img/header-image-blue.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+/* line 14, ../../sass/partials/_splashscreen.scss */
+#SplashScreen .logo {
+  height: 200px;
+}
+/* line 17, ../../sass/partials/_splashscreen.scss */
+#SplashScreen table {
+  height: 100%;
+  position: absolute;
+  margin: 0 56px;
+  top: 0;
+}
+/* line 18, ../../sass/partials/_splashscreen.scss */
+#SplashScreen table .content {
+  text-align: center;
+  color: #fff;
+}
+/* line 29, ../../sass/partials/_splashscreen.scss */
+#SplashScreen .nav-bar {
+  position: absolute;
+  top: 53%;
+  left: 0;
+  width: 100%;
+  height: 37px;
+  text-align: center;
+}
+/* line 36, ../../sass/partials/_splashscreen.scss */
+#SplashScreen .nav-bar .nav-list {
+  height: 100%;
+  width: 100%;
+}
+/* line 39, ../../sass/partials/_splashscreen.scss */
+#SplashScreen .nav-bar .nav-list > li {
+  position: relative;
+  float: left;
+  width: 33.333333%;
+  height: 100%;
+}
+/* line 46, ../../sass/partials/_splashscreen.scss */
+#SplashScreen .nav-bar .nav-list li {
+  background-color: #FFCA00;
+  color: #000033;
+  line-height: 36px;
+  vertical-align: middle;
+}
+/* line 48, ../../sass/partials/_splashscreen.scss */
+#SplashScreen .nav-bar .nav-list li:hover {
+  background-color: #FF0033;
+  color: #fff;
+}
+/* line 59, ../../sass/partials/_splashscreen.scss */
+#SplashScreen .nav-bar .nav-list .parent-list:hover .sub-list {
+  display: inline-block;
+}
+/* line 64, ../../sass/partials/_splashscreen.scss */
+#SplashScreen .nav-bar .nav-list .sub-list {
+  display: none;
+  position: absolute;
+  z-index: 9999;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 108px;
+}
+/* line 72, ../../sass/partials/_splashscreen.scss */
+#SplashScreen .nav-bar .nav-list .sub-list li {
+  height: 36px;
+  width: 100%;
+}
